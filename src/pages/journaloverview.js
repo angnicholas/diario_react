@@ -132,18 +132,31 @@ const CustomPaginationActionsTable = (props) => {
           return lastUpdateDateTime.toDateString();
         }
 
+        const dateToObj = (utcDate) => {
+          const x = new Date(utcDate);
+          return x
+        }
+
         const avSentiment = x['sentiment']['positive'] - x['sentiment']['negative']
         const riskScore = Math.round((-avSentiment+1)*50)
 
         final_array.push({
           'id':x['id'],
+          'dateCreatedObject': dateToObj(x['date_created']),
           'dateCreated':dateToString(x['date_created']),
           'dateUpdated': dateToString(x['date_updated']),
           'title':x['title'],
           'summary':x['text'].slice(0, 30).concat('...'),
           'riskScore':riskScore,
         });
+
       });
+
+      console.log(final_array)
+
+      final_array.sort((a, b) => b.dateCreatedObject - a.dateCreatedObject);
+      
+      console.log(final_array);
 
       return final_array;
     };
