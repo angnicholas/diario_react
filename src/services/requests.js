@@ -16,10 +16,6 @@ export async function getFromApi(url, setContent, setLoading, resDataToContent){
     .then((res) => {
       const content = resDataToContent(res.data);
       setContent(content);
-      console.log('apidata', res.data);      
-      console.log('content', content);
-
-      
       setLoading(false);
     })
     .catch((err) => console.log(err));

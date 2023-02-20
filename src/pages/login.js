@@ -11,15 +11,12 @@ const LoginPage = (props) => {
   }
 
   const handle_login = (e, username, password) => {
-    console.log(e, username, password);
     login(username, password, setRequestFailedTrue);
-    //do something
     e.preventDefault();
   }
 
   const handle_logout = () => {
     logout();
-    console.log('hello');
   }
 
   if (requestFailed) {
