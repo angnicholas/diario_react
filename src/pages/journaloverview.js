@@ -220,7 +220,10 @@ const CustomPaginationActionsTable = (props) => {
                 <TableCell>
                   {row.summary}
                 </TableCell>
-                <TableCell style={{ width: 150 }}>
+                <TableCell style={{ width: 160, 
+                  color: `${row.riskScore > 70 ? 'red' : 'black'}`,
+                  fontWeight: `${row.riskScore > 70 ? 'bold' : 'normal'}`,
+                  }} align="right">
                   {row.riskScore}
                 </TableCell>
               </TableRow>

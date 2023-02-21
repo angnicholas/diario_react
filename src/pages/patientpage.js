@@ -192,8 +192,8 @@ export default function CustomPaginationActionsTable() {
                 </TableCell>
 
                 <TableCell style={{ width: 160, 
-                  color: `${row.riskScore > 50 ? 'red' : 'black'}`,
-                  fontWeight: `${row.riskScore > 50 ? 'bold' : 'normal'}`,
+                  color: `${row.riskScore > 70 ? 'red' : 'black'}`,
+                  fontWeight: `${row.riskScore > 70 ? 'bold' : 'normal'}`,
                   }} align="right">
                   {row.riskScore}
                 </TableCell>
